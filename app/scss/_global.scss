@@ -1,0 +1,109 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main{
+    flex: 1 0 auto;
+}
+.footer{
+    flex: 0 0 auto;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.container-fuild{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.slick-dots{
+    display: flex;
+    justify-content: space-between;
+    max-width: 83px;
+    margin: 0 auto;
+    & li{
+        justify-content: space-between;
+    }
+    & button{
+        background: $overblack;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        font-size: 0;
+
+        cursor: pointer;
+    }
+    .slick-active button{
+        background: #FFEF35;
+    }
+}
+
+.collection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+    grid-auto-rows: auto;
+    justify-content: center;
+    gap: 20px;
+    &-item{
+        width: 350px;
+        height: 350px;
+        position: relative;
+        &:hover{
+            .collection-img{
+                background: #FFFFFF;
+                opacity: 0.6;
+            }
+            .collection-content{
+                opacity: 1;
+            }
+        }
+    }
+    &-img{
+        max-width: 350px;
+        max-height: 350px;
+        object-fit: cover;
+
+        transition: all 0.3s;
+    }
+    &-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-right: -50%;
+        max-width: 250px;
+
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    &-title{
+        @extend %title-font;
+        color: $overblack;
+        font-size: 20px;
+        position: relative;
+        margin-bottom: 40px;
+        line-height: 40px;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -19px;
+            transform: translate(-50%);
+            width: 200px;
+            height: 1px;
+            background: #6D7278;
+        }
+    }
+    &-subtitle{
+        color: #707070;
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,21 @@
+// Переменные
+$overblack: #363838;
+$black: #5A5A5A;
+$semiblack: #6D7278;
+$notblack: #979797;
+
+
+$orangeYellow: #F1D152;
+$yellow: #FFEF35;
+
+
+//
+%title-font{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+%title-block{
+    @extend %title-font;
+    font-size: 36px;
+    color: $overblack;
+}
